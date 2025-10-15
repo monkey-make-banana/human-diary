@@ -1,0 +1,53 @@
+[build-system]
+requires = ["hatchling>=1.18"]
+build-backend = "hatchling.build"
+
+[project]
+name = "human-diary-pipeline"
+version = "0.1.0"
+description = "Agentic newsroom orchestration that mirrors Humanity's Diary production flow."
+authors = [
+  { name = "Humanity's Diary Lab" }
+]
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+  "langchain>=0.2.14",
+  "langchain-community>=0.2.12",
+  "langchain-experimental>=0.0.61",
+  "langchain-openai>=0.1.22",
+  "langchain-anthropic>=0.1.20",
+  "langgraph>=0.2.20",
+  "langsmith>=0.1.108",
+  "babyagi @ file://../babyagi",
+  "openai>=1.40.3",
+  "pydantic>=2.8.2",
+  "python-dotenv>=1.0.1",
+  "requests>=2.32.3",
+  "httpx>=0.27.0",
+  "tenacity>=8.3.0",
+  "numpy>=1.26.4",
+  "pandas>=2.2.2",
+  "networkx>=3.2.1",
+  "tiktoken>=0.7.0",
+  "duckdb>=1.0.0",
+  "beautifulsoup4>=4.12.3",
+  "docarray>=0.40.0"
+]
+
+[project.optional-dependencies]
+dev = [
+  "pytest>=8.2.2",
+  "pytest-asyncio>=0.23.7",
+  "ruff>=0.5.7"
+]
+
+[project.scripts]
+human-diary-newsroom = "human_diary_pipeline.cli:main"
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+
+[tool.coverage.run]
+source = ["human_diary_pipeline"]
