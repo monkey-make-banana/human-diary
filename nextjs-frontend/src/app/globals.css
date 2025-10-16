@@ -20,7 +20,16 @@
 }
 
 body {
-  background: var(--background);
+  background: #000;
   color: var(--foreground);
-  font-family: var(--font-bitcount), Arial, Helvetica, sans-serif;
+  font-family: var(--font-monaco), 'Monaco', 'Courier New', monospace;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-bitcount), 'Bitcount', 'Monaco', monospace;
 }
