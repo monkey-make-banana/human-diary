@@ -18,14 +18,14 @@ export default function Today() {
         <div className="rounded-lg overflow-hidden">
           <Image
             src="/today.png"
-            alt="Today's image"
+            alt="Today&apos;s image"
             width={400}
             height={128}
           />
         </div>
         
         {/* Heading sentence */}
-        <h2 className="text-xl font-semibold">Today's reflections on the human experience</h2>
+        <h2 className="text-xl font-semibold">Today&apos;s reflections on the human experience</h2>
         
         {/* Ten bullet points */}
         <ul className="space-y-3 text-lg">
