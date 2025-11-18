@@ -58,6 +58,16 @@ export default function WhatPage() {
         </div>
       </header>
 
+      <div className="flex justify-center">
+        <Link
+          href="https://github.com/monkey-make-banana/human-diary"
+          className="inline-flex items-center gap-2 rounded-full border border-zinc-900/10 bg-zinc-900 px-4 py-2 text-sm font-semibold text-white shadow-sm transition hover:-translate-y-0.5 hover:bg-zinc-800 dark:border-white/20 dark:bg-white dark:text-zinc-900"
+        >
+          Check out the source code
+          <span aria-hidden="true">→</span>
+        </Link>
+      </div>
+
       <Divider soft />
 
       <section className="rounded-3xl border border-zinc-100 bg-zinc-50/80 p-8 text-left shadow-sm dark:border-white/5 dark:bg-white/5 dark:shadow-none">
