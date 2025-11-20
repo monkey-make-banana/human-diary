@@ -5,9 +5,8 @@ import { Divider } from '@/app/components/ui-kit/divider'
 import { Heading } from '@/app/components/ui-kit/heading'
 import { Link } from '@/app/components/ui-kit/link'
 
-const longDateFormatter = new Intl.DateTimeFormat('en-US', {
-  weekday: 'long',
-  month: 'long',
+const displayDateFormatter = new Intl.DateTimeFormat('en-US', {
+  month: 'short',
   day: 'numeric',
   year: 'numeric',
 })
@@ -33,10 +32,10 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     }
   }
 
-  const longLabel = longDateFormatter.format(asUTCDate(entry.date))
+  const shortLabel = displayDateFormatter.format(asUTCDate(entry.date))
 
   return {
-    title: `${entry.title} — ${longLabel}`,
+    title: `${entry.title} — ${shortLabel}`,
   }
 }
 
@@ -49,7 +48,7 @@ export default async function DiaryEntryPage({ params }: PageProps) {
   }
 
   const dateValue = asUTCDate(entry.date)
-  const longLabel = longDateFormatter.format(dateValue)
+  const shortLabel = displayDateFormatter.format(dateValue)
 
   return (
     <article className="mx-auto flex h-full max-w-4xl flex-col gap-10 py-10">
@@ -64,9 +63,7 @@ export default async function DiaryEntryPage({ params }: PageProps) {
 
       <div className="space-y-4 text-center">
         <Heading className="text-4xl sm:text-5xl">{entry.title}</Heading>
-        <p className="text-sm font-semibold uppercase tracking-[0.3em] text-zinc-500 dark:text-zinc-400">
-          {longLabel}
-        </p>
+        <p className="text-sm font-semibold uppercase tracking-[0.3em] text-zinc-500 dark:text-zinc-400">{shortLabel}</p>
       </div>
 
       <Divider soft />

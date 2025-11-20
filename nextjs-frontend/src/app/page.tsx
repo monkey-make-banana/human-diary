@@ -7,9 +7,8 @@ import { Table, TableBody, TableCell, TableRow } from './components/ui-kit/table
 
 const diaryEntries = getDiaryEntries()
 
-const longDateFormatter = new Intl.DateTimeFormat('en-US', {
-  weekday: 'long',
-  month: 'long',
+const shortDateFormatter = new Intl.DateTimeFormat('en-US', {
+  month: 'short',
   day: 'numeric',
   year: 'numeric',
 })
@@ -110,16 +109,16 @@ export default async function Home({ searchParams }: HomeProps) {
           <TableBody>
             {currentEntries.map((entry) => {
               const dateValue = asUTCDate(entry.date)
-              const longLabel = longDateFormatter.format(dateValue)
+              const shortLabel = shortDateFormatter.format(dateValue)
 
               return (
-                <TableRow key={entry.date} href={`/${entry.date}`} title={`${entry.title} — ${longLabel}`}>
+                <TableRow key={entry.date} href={`/${entry.date}`} title={`${entry.title} — ${shortLabel}`}>
                   <TableCell className="max-w-xl">
                     <p className="text-base font-semibold text-zinc-950 dark:text-white">{entry.title}</p>
                   </TableCell>
                   <TableCell className="text-right sm:w-32">
                     <p className="text-sm font-semibold uppercase tracking-[0.2em] text-zinc-500 dark:text-zinc-400">
-                      {longLabel}
+                      {shortLabel}
                     </p>
                   </TableCell>
                 </TableRow>
