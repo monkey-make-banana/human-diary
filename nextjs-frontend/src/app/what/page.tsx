@@ -99,8 +99,8 @@ export default function WhatPage() {
         <ul className="space-y-2 text-sm text-zinc-600 dark:text-zinc-300">
           {references.map((reference) => (
             <li key={reference.key} className="leading-relaxed">
-              <span className="font-semibold text-zinc-900 dark:text-white">{reference.key}</span>
-              <span className="px-2 text-zinc-400">·</span>
+              {/* <span className="font-semibold text-zinc-900 dark:text-white">{reference.key}</span> */}
+              {/* <span className="px-2 text-zinc-400">·</span> */}
               <a
                 href={reference.url}
                 target="_blank"
