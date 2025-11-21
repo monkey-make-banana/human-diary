@@ -13,7 +13,7 @@ const shortDateFormatter = new Intl.DateTimeFormat('en-US', {
   year: 'numeric',
 })
 
-const asUTCDate = (isoDate: string) => new Date(`${isoDate}T00:00:00Z`)
+const asUTCDate = (isoDate: string) => new Date(`${isoDate}T12:00:00Z`)
 
 const PAGE_SIZE = 5
 

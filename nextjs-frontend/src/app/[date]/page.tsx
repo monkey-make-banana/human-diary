@@ -11,7 +11,7 @@ const displayDateFormatter = new Intl.DateTimeFormat('en-US', {
   year: 'numeric',
 })
 
-const asUTCDate = (isoDate: string) => new Date(`${isoDate}T00:00:00Z`)
+const asUTCDate = (isoDate: string) => new Date(`${isoDate}T12:00:00Z`)
 
 type PageProps = {
   params: Promise<{
